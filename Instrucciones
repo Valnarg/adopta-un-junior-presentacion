@@ -1,0 +1,10 @@
+
+-------------------------------------------DOCUMENTACION PARA PROYECTO EN CONJUNTO------------------------------------
+
+  Introduccion:
+
+1. Se pretende hacer un programa en c++ que registre un usuario y una contraseña, y que este, verifique si el usuario y contraseña es correcto.
+2. Los datos guardados por el programa se añadiran a una base de datos externa.
+3. A continuacion en una pequeña pagina web , se pretende implementar el programa para ver su funcionamiento.
+
+Ire comentando los avances con este documento y redactando las instrucciones.
