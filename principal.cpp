@@ -24,9 +24,9 @@ int main () {
 	// aqui la inicializo con mis datos.
 	Persona  Alumno1 ("Jorge" , "Guillen", "Villalba",33);	
 
-	// Dejo un par de declaraciones cout para añadir algo de informacion sobre mi.
+	// Dejo un par de declaraciones cout para aï¿½adir algo de informacion sobre mi.
 	
-	cout << "Hola bienvenidos a mi espacio, he creado un sencillo programa con un poco de todo lo que he ido aprendiendo a lo largo de este año de c++, les voy a mostrar un ejemplo para mi presentacion y ademas un minijuego de logica, que siempre son divertidos."<< endl<<endl;
+	cout << "Hola bienvenidos a mi espacio, he creado un sencillo programa con un poco de todo lo que he ido aprendiendo a lo largo de este aï¿½o de c++, les voy a mostrar un ejemplo para mi presentacion y ademas un minijuego de logica, que siempre son divertidos."<< endl<<endl;
 	
 	cout << "DATOS PERSONALES:"<< endl <<"Me presento, mi nombre es "<< Alumno1.nombre<<" " << Alumno1.apellido1<< " " << Alumno1.apellido2 << " tengo  "<< Alumno1.edad <<" primaveras, y poco a poco, ando aprendiendo mas de lo que me apasiona, la programacion."<< endl << endl;
 	
@@ -52,34 +52,39 @@ int main () {
 	//Este minijuego trata de averiguar la combinacion de la caja fuerte de 4 digitos en el menor numeros de intentos posibles.
 	// Para ello necesitare inicializar varias variables
 	
-	// semilla para generar los numeros aleatorios
+	// semilla para generar los numeros y letras aleatorias
 	 srand(time(0));
 	 
-int digito1,digito2,digito3,digito4,contador,aleatorio,aciertos,respuesta;
+int digito1,digito2,digito3,digito4,caracter,contador,aleatorio,letra,aciertos,respuesta,respchar;
 
 aleatorio=aleatoriador(aleatorio);
-//cout << aleatorio<< endl;//Funcion para hacer un numero de 4 digitos aleatorio, despues daremos forma a esto.
+letra=aleatoriadorchar();
+//cout << aleatorio<< endl;//Funcion para hacer un numero de 4 digitos aleatorios, despues daremos forma a esto.
+//cout << aleatoriadorchar<< endl;//Funcion para generar letras aleatorias.
 
 
-	// Ahora que tenemos el numero aleatorio para nuestro mini juego de caja fuerte necesitamos separarlos en digitos y añadirlos a las variables
+	// Ahora que tenemos el numero aleatorio para nuestro mini juego de caja fuerte necesitamos separarlos en digitos, un caracter  y aï¿½adirlos a las variables
 
 
- 	digito1 = aleatorio / 1000;         // Primer Dígito
-    digito2 = (aleatorio / 100) % 10;   // Segundo Dígito
-    digito3 = (aleatorio / 10) % 10;    // Tercer Dígito
+ 	digito1 = aleatorio / 1000;         // Primer Dï¿½gito
+    digito2 = (aleatorio / 100) % 10;   // Segundo Dï¿½gito
+    digito3 = (aleatorio / 10) % 10;    // Tercer Dï¿½gito
     digito4 = aleatorio % 10; 			// Cuarto Digito
     
+
     //inicializo las variables para el minijuego
     contador =0;
     aciertos=0;
     respuesta=0;
+	respchar=' ';
 
 //cout << digito1<<" "<< digito2 <<" " << digito3 << " " << digito4 <<endl; // esta linea es para comprobar que los digitos son correctos.
 
 
-cout << "Bienvenido al juego de la caja fuerte, es sencillo tienes que adivinar los 4 digitos de nuestra caja fuerte en los menores intentos posibles, cada vez que cometas un error, te ire dando pistas, y si aciertas uno de los digitos te lo dire, si aciertas los 4 digitos habra acabado el juego, te animas?"<< endl << endl;
+cout << "Bienvenido al juego de la caja fuerte, es sencillo tienes que adivinar el cÃ³digo de nuestra caja fuerte (4 dÃ­gitos y una letra) en los menores intentos posibles, cada vez que cometas un error, te ire dando pistas, y si aciertas uno de los digitos te lo dire, si aciertas la clave habra acabado el juego, te animas?"<< endl << endl;
 
 cout <<"Por favor por cada digito introduzca un numero entre el 0-9"<< endl << endl;
+
 while (aciertos < 4) {
 
 contador++; // Esto contara los intentos realizados a la hora de intentar adivinar la combinacion ganadora
@@ -185,18 +190,32 @@ if (respuesta == digito4) {
 				
 			
 
-				};			
+				};		
+
+// Condicionales para la letra
+
+cout << endl<< "LETRA MAYÃšSCULA" << endl; cin >> respuesta;
+
+if (respchar == letra) {
+	
+	cout << "Enorabuena, acertaste la letra de la clave!"<< endl;
+	
+	aciertos++;
+	
+	}
+	
+		else if (respuesta != respchar) {
+	
+		cout << "La letra nos es correcta, sigue intentÃ¡dolo"<< endl;
+	
+		}
+		
 			
 
 };
 
 
-
 cout << "Has completado con exito la caja fuerte con un total de "<< contador << " intentos, espero que lo hayas disfrutado tanto como yo programandolo, este es el fin de mi presentacion, espero les haya gustado.";
-
-
-
-
 
     return 0;
 };
@@ -212,4 +231,9 @@ int aleatoriador(int aleatorio) {
 
 }
 
+// aqui dejo la funcion para generar letras aleatorias
 
+char aleatoriadorchar() {
+    char letra_aleatoria = 'A' + rand() % 26; 
+    return letra_aleatoria;
+}
