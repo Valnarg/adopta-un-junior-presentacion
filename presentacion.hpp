@@ -9,7 +9,7 @@ using namespace std;
 
 
 int aleatoriador(int aleatorio);
-
+char aleatoriadorchar();
 
 
 
