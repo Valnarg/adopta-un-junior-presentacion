@@ -55,8 +55,9 @@ int main () {
 	// semilla para generar los numeros y letras aleatorias
 	 srand(time(0));
 	 
-int digito1,digito2,digito3,digito4,caracter,contador,aleatorio,letra,aciertos,respuesta,respchar;
-
+int digito1,digito2,digito3,digito4,contador,aleatorio,aciertos,respuesta;
+char letra,respchar;
+	
 aleatorio=aleatoriador(aleatorio);
 letra=aleatoriadorchar();
 //cout << aleatorio<< endl;//Funcion para hacer un numero de 4 digitos aleatorios, despues daremos forma a esto.
@@ -85,7 +86,7 @@ cout << "Bienvenido al juego de la caja fuerte, es sencillo tienes que adivinar 
 
 cout <<"Por favor por cada digito introduzca un numero entre el 0-9"<< endl << endl;
 
-while (aciertos < 4) {
+while (aciertos < 5) {
 
 contador++; // Esto contara los intentos realizados a la hora de intentar adivinar la combinacion ganadora
 aciertos=0; // Esto me servira para reiniciar la variable si no se ha acertado correctamente todos los numeros
@@ -194,7 +195,7 @@ if (respuesta == digito4) {
 
 // Condicionales para la letra
 
-cout << endl<< "LETRA MAYÚSCULA" << endl; cin >> respuesta;
+cout << endl<< "LETRA MAYÚSCULA" << endl; cin >> respchar;
 
 if (respchar == letra) {
 	
